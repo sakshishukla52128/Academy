@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Aboutus() {
+function Gallery() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Aboutus() {
   )
 }
 
-export default Aboutus
+export default Gallery
