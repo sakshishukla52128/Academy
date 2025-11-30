@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Target, Users, Award, Trophy, MapPin, Clock, Star, Heart, Zap, TrendingUp, Shield, Dumbbell, Video, Coffee, ChevronRight, Check, Play } from 'lucide-react';
 
+<<<<<<< HEAD:src/components/Aboutus.jsx
 function Aboutus() {
   const [activeCoach, setActiveCoach] = useState(null);
   const [activeTab, setActiveTab] = useState('mission');
@@ -109,6 +110,9 @@ function Aboutus() {
     "💪 100% Tournament Preparation Success Rate"
   ];
 
+=======
+function Batches() {
+>>>>>>> 0a238f003bcb1b3933679821182437544cedf340:src/components/Batches.jsx
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 overflow-hidden">
       {/* Animated Hero Section */}
@@ -493,4 +497,8 @@ function Aboutus() {
   );
 }
 
+<<<<<<< HEAD:src/components/Aboutus.jsx
 export default Aboutus;
+=======
+export default Batches
+>>>>>>> 0a238f003bcb1b3933679821182437544cedf340:src/components/Batches.jsx
