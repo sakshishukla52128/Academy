@@ -98,10 +98,38 @@ const Home = () => {
   // Stats data for animated counters
   
   const statsData = React.useMemo(() => [
-    { number: 500, suffix: '+', label: 'Trained Players' },
-    { number: 50, suffix: '+', label: 'Tournament Wins' },
-    { number: 10, suffix: '+', label: 'Professional Coaches' },
-    { number: 5, suffix: '+', label: 'Training Centers' }
+    { 
+      number: 60, 
+      suffix: '+', 
+      label: 'Trained Players',
+      icon: '👥',
+      description: 'Students achieving excellence',
+      color: '#4ecdc4'
+    },
+    { 
+      number: 50, 
+      suffix: '+', 
+      label: 'Tournament Wins',
+      icon: '🏆',
+      description: 'Victories across all levels',
+      color: '#ff6b6b'
+    },
+    { 
+      number: 5, 
+      suffix: '+', 
+      label: 'Professional Coaches',
+      icon: '🎓',
+      description: 'Certified expert trainers',
+      color: '#ffa500'
+    },
+    { 
+      number: 5, 
+      suffix: '+', 
+      label: 'Years of Excellence',
+      icon: '⭐',
+      description: 'Delivering quality training',
+      color: '#9b59b6'
+    }
   ], []);
 
   // Coach information
@@ -483,21 +511,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Animated Stats Section */}
+      {/* Home Stats Section - UNIQUE CLASSES */}
       <section 
         id="stats-section" 
         ref={setSectionRef('stats-section')}
-        className={`stats-section ${isVisible['stats-section'] ? 'visible' : ''}`}
+        className={`home-stats-section ${isVisible['stats-section'] ? 'visible' : ''}`}
       >
         <div className="container">
-          <h2 className="section-title">Our Achievements</h2>
-          <div className="stats-grid">
+          <div className="home-stats-header">
+            <h2 className="home-stats-title">Our Achievements</h2>
+            <p className="home-stats-subtitle">Excellence measured in numbers, proven through results</p>
+          </div>
+          <div className="home-stats-grid">
             {statsData.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-number animated">
+              <div key={index} className="home-stat-card">
+                <div className="home-stat-icon-wrapper" style={{ backgroundColor: `${stat.color}15`, borderColor: stat.color }}>
+                  <span className="home-stat-icon-emoji">{stat.icon}</span>
+                </div>
+                <div className="home-stat-number animated">
                   {animatedStats ? counters[index] : 0}{stat.suffix}
                 </div>
-                <div className="stat-label">{stat.label}</div>
+                <div className="home-stat-label">{stat.label}</div>
+                <p className="home-stat-description">{stat.description}</p>
               </div>
             ))}
           </div>
