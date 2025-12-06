@@ -55,7 +55,7 @@
 }
 
 .highlight {
-  background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
+  background: linear-gradient(45deg,  #3c0bc9 0%, #091d2b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -176,595 +176,787 @@
   border-radius: 2px;
 }
 
-/* Mission Section */
-.mission-section {
+/* ========================================
+   OUR STORY SECTION
+======================================== */
+.story-section {
   padding: 100px 0;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
-.mission-grid {
+.story-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-timeline {
+  display: flex;
+  flex-direction: column;
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.mission-card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 30px;
   position: relative;
-  overflow: hidden;
 }
 
-.mission-card::before {
+.timeline-item::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  left: 50px;
+  top: 40px;
+  bottom: -40px;
+  width: 2px;
+  background: linear-gradient(to bottom, #ff6b00, #ff8c00);
 }
 
-.mission-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.timeline-item:last-child::before {
+  display: none;
 }
 
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.mission-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #1a202c; /* Dark black */
+.timeline-year {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
   font-weight: 800;
-}
-
-.mission-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2d3748; /* Dark gray */
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-.mission-list {
-  list-style: none;
-  padding: 0;
-}
-
-.mission-list li {
-  padding: 8px 0;
-  color: #1a202c; /* Dark black */
-  font-weight: 600;
-}
-
-/* Stats Section */
-.stats-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-.stat-card {
-  text-align: center;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.stat-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 10px;
-  color: #ffd89b;
-}
-
-.stat-text {
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* Features Section */
-.features-section {
-  padding: 100px 0;
-  background: white;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.feature-card {
-  background: #f8f9fa;
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.feature-card:hover {
-  background: white;
-  border-color: #667eea;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
-}
-
-.feature-icon {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #1a202c; /* Dark black for better visibility */
-  font-weight: 700;
-}
-
-.feature-card p {
-  color: #2d3748; /* Dark gray for better visibility */
-  line-height: 1.6;
-  font-weight: 500;
-}
-
-/* Coach Section */
-.coach-section {
-  padding: 120px 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
-  color: white;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.coach-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 60%);
-  animation: backgroundFloat 15s ease-in-out infinite;
-}
-
-@keyframes backgroundFloat {
-  0%, 100% { 
-    background: 
-      radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
-  }
-  50% { 
-    background: 
-      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
-      radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 40%);
-  }
-}
-
-.coach-section .section-title {
-  color: white;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  margin-bottom: 80px;
-}
-
-.coaches-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 50px;
-  margin-top: 60px;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
   position: relative;
   z-index: 2;
 }
 
-.coach-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 30px;
-  height: 520px;
-  perspective: 1000px;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  overflow: visible;
+.timeline-content h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.story-image {
   position: relative;
-}
-
-.coach-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  border-radius: 30px;
-}
-
-.coach-card:hover::before {
-  opacity: 1;
-  animation: shimmer 1.5s ease-in-out;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.coach-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform-style: preserve-3d;
-}
-
-.coach-card:hover .coach-card-inner {
-  transform: rotateY(180deg);
-}
-
-.coach-card-front,
-.coach-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 30px;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-.coach-card-back {
-  transform: rotateY(180deg);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 50%, rgba(236, 72, 153, 0.2) 100%);
-  backdrop-filter: blur(20px);
+.story-image img {
+  width: 100%;
+  display: block;
+}
+
+.story-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 50px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+/* ========================================
+   MISSION & VISION SECTION
+======================================== */
+.mission-vision-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.mv-card {
+  background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.mv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(255, 107, 0, 0.2);
+  border-color: #ff6b00;
+}
+
+.mv-icon-wrapper {
+  margin-bottom: 25px;
+}
+
+.mv-icon {
+  font-size: 4rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mv-card h3 {
+  font-size: 2rem;
+  color: #ff6b00;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.mv-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.mv-features {
+  display: grid;
+  gap: 15px;
+}
+
+.mv-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.check-icon {
+  color: #ff6b00;
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   STATS SHOWCASE SECTION
+======================================== */
+.stats-showcase-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.stats-showcase-section .section-title {
+  color: white;
+}
+
+.stats-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.stat-showcase-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 107, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.stat-showcase-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ff6b00;
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.3);
+}
+
+.stat-icon-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+}
+
+.stat-icon-circle .stat-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ff6b00;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.stat-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   CORE VALUES SECTION
+======================================== */
+.values-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.value-card {
+  background: white;
   padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
 }
 
-/* Front of card */
-.coach-image-container {
-  position: relative;
-  height: 65%;
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255, 107, 0, 0.15);
+  border-color: #ff6b00;
+}
+
+.value-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ========================================
+   COACHES SHOWCASE SECTION
+======================================== */
+.coaches-showcase-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.coaches-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.coach-showcase-card {
+  background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+  border-radius: 25px;
   overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
-.coach-image-container img {
+.coach-showcase-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(255, 107, 0, 0.2);
+}
+
+.coach-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+
+.coach-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.6s ease;
-  filter: grayscale(20%) brightness(1.1);
+  transition: transform 0.4s ease;
 }
 
-.coach-card:hover .coach-image-container img {
-  transform: scale(1.15);
-  filter: grayscale(0%) brightness(1.2);
+.coach-showcase-card:hover .coach-image-wrapper img {
+  transform: scale(1.1);
 }
 
-.coach-info-section {
-  height: 35%;
+.coach-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
-  padding: 25px 20px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.coach-showcase-card:hover .coach-overlay {
+  opacity: 1;
+}
+
+.social-links-overlay {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  background: #ff6b00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: white;
+  color: #ff6b00;
+  transform: translateY(-3px);
+}
+
+.coach-info-wrapper {
+  padding: 35px 30px;
 }
 
 .coach-name {
   font-size: 1.8rem;
-  font-weight: 800;
+  color: #222;
   margin-bottom: 8px;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-weight: 800;
 }
 
 .coach-role {
+  color: #ff6b00;
   font-size: 1.1rem;
-  color: #fbbf24;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
-.coach-experience {
-  font-size: 0.95rem;
-  color: #e2e8f0;
-  opacity: 0.9;
-  margin-bottom: 8px;
-}
-
-.coach-speciality {
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  font-weight: 500;
-}
-
-/* Back of card */
-.coach-details {
-  color: white;
-  text-align: left;
-}
-
-.coach-details h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #fbbf24;
-  font-weight: 800;
-  text-align: center;
-}
-
-.certifications {
-  margin-bottom: 25px;
-}
-
-.certifications h4 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #e2e8f0;
-  font-weight: 700;
-}
-
-.cert-item {
-  display: flex;
+.coach-exp-badge {
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
   font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-.cert-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateX(8px);
+.coach-specialization {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  font-style: italic;
 }
 
-.cert-icon {
-  margin-right: 10px;
+.coach-certifications h4,
+.coach-specializations h4,
+.coach-achievements h4 {
   font-size: 1.1rem;
-  color: #fbbf24;
-}
-
-.specializations {
-  margin-bottom: 20px;
-}
-
-.specializations h4 {
-  font-size: 1.2rem;
+  color: #222;
   margin-bottom: 12px;
-  color: #e2e8f0;
   font-weight: 700;
+}
+
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  padding: 6px 15px;
+  border-radius: 50px;
+  border: 1px solid #ff6b00;
+  color: #ff6b00;
+  font-size: 0.85rem;
+  margin: 4px;
+  font-weight: 600;
+}
+
+.cert-badge-icon {
+  font-size: 0.9rem;
 }
 
 .spec-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: 10px;
 }
 
 .spec-tag {
-  padding: 8px 14px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-radius: 20px;
+  background: #ff6b00;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: white;
-  transition: all 0.3s ease;
 }
 
-.spec-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.social-link {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+.achievement-list li {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.1rem;
+  gap: 10px;
+  padding: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.star-icon {
+  color: #ffa500;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   TESTIMONIALS SHOWCASE SECTION
+======================================== */
+.testimonials-showcase-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.testimonials-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-top: 60px;
+}
+
+.testimonial-showcase-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
   transition: all 0.4s ease;
-  border: 1px solid rgba(255,255,255,0.2);
-  text-decoration: none;
 }
 
-.social-link:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+.testimonial-showcase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(255, 107, 0, 0.15);
 }
 
-/* Spotlight effect on hover */
-.coach-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 
-    0 40px 80px rgba(0, 0, 0, 0.3),
-    0 0 100px rgba(59, 130, 246, 0.2);
-}
-
-.coach-card::after {
-  content: '';
+.quote-icon {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-  z-index: -1;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #ff6b00;
+  opacity: 0.15;
 }
 
-.coach-card:hover::after {
+.testimonial-rating {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.testimonial-rating .star {
+  color: #ffa500;
+  font-size: 1.1rem;
+}
+
+.testimonial-text {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+
+.author-details h4 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.author-details p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   GALLERY SHOWCASE SECTION
+======================================== */
+.gallery-showcase-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.gallery-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.gallery-showcase-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: 300px;
+}
+
+.gallery-showcase-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-showcase-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-showcase-item:hover .gallery-overlay {
   opacity: 1;
-  animation: spotlightPulse 2s ease-in-out infinite;
 }
 
-@keyframes spotlightPulse {
-  0%, 100% { transform: scale(1); opacity: 0.15; }
-  50% { transform: scale(1.1); opacity: 0.25; }
+.gallery-overlay h3 {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
-/* Scroll animations for coaches */
-.coach-card.scroll-animate {
-  animation: coachSlideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  opacity: 0;
+/* ========================================
+   CTA SHOWCASE SECTION
+======================================== */
+.cta-showcase-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  text-align: center;
 }
 
-@keyframes coachSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(80px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.cta-showcase-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Enhanced Responsive Design */
-@media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-stats {
-    justify-content: center;
-  }
-
-  .mission-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .coach-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-    height: 480px;
-  }
-
-  .coaches-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .coach-card-back {
-    padding: 30px 25px;
-  }
-
-  .coach-details h3 {
-    font-size: 1.7rem;
-  }
-
-  .cert-item {
-    font-size: 0.85rem;
-    padding: 8px 10px;
-  }
-
-  .spec-tag {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
+.cta-heart-icon {
+  font-size: 4rem;
+  color: #ff6b00;
+  margin-bottom: 25px;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
 
-  .hero-stats {
-    flex-direction: column;
-    gap: 15px;
-  }
+.cta-showcase-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
 
-  .features-grid {
+.cta-showcase-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-stats-mini {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.cta-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-stat strong {
+  font-size: 2.5rem;
+  color: #ff6b00;
+  font-weight: 800;
+}
+
+.cta-stat span {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1a1a2e;
+  transform: translateY(-3px);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-arrow,
+.btn-secondary:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1024px) {
+  .story-content,
+  .coaches-showcase-grid {
     grid-template-columns: 1fr;
   }
 
-  .stats-grid {
+  .stats-showcase-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .coach-card {
-    height: 450px;
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision-grid,
+  .testimonials-showcase-grid,
+  .gallery-showcase-grid,
+  .stats-showcase-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 
-  .coach-card-back {
-    padding: 25px 20px;
+  .cta-stats-mini {
+    flex-direction: column;
+    gap: 30px;
   }
 
-  .social-links {
-    gap: 10px;
+  .cta-buttons {
+    flex-direction: column;
   }
 
-  .social-link {
-    width: 38px;
-    height: 38px;
+  .timeline-item {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .timeline-year {
+    width: 80px;
+    height: 80px;
     font-size: 1rem;
-  }
-
-  .coach-name {
-    font-size: 1.5rem;
-  }
-
-  .coach-details h3 {
-    font-size: 1.5rem;
   }
 }
