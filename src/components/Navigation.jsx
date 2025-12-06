@@ -9,13 +9,13 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About Academy', href: '/about-academy' },
-    { name: 'Programs', href: '/programs' },
-    { name: 'Batches', href: '/batches' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'About Academy', href: '/aboutus' },
+    
+    
+    
     { name: 'Facilities', href: '/facilities' },
     { name: 'Coaches', href: '/coaches' },
-    { name: 'Achievements', href: '/achievements' },
+    
     { name: 'Gallery', href: '/gallery' },
     { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact' }
@@ -42,9 +42,11 @@ const Navigation = () => {
           ))}
         </ul>
 
-        <div className="nav-cta">
-          <Link to="/contact" className="cta-primary nav-cta-btn" onClick={() => setIsMenuOpen(false)}>Free Trial</Link>
-        </div>
+      <a href="tel:+911234567890" className="call-btn">
+  <span className="bounce-icon">📞</span>
+  Request a Call
+</a>
+
 
         <button 
           className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
