@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import './Navigation.css';
+// Import the logo image
+import logo from '../assets/logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,10 +11,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About Academy', href: '/about-academy' },
+    { name: 'Aboutus', href: '/aboutus' },
     { name: 'Programs', href: '/programs' },
     { name: 'Batches', href: '/batches' },
-    { name: 'Pricing', href: '/pricing' },
     { name: 'Facilities', href: '/facilities' },
     { name: 'Coaches', href: '/coaches' },
     { name: 'Achievements', href: '/achievements' },
@@ -24,16 +25,21 @@ const Navigation = () => {
   return (
     <nav className="main-nav">
       <div className="nav-container">
+        {/* Logo Section */}
         <div className="nav-logo">
-          <span className="logo-text">Shuttle Smash</span>
+          <Link to="/" className="logo-link">
+            <img src={logo} alt="SSBA Academy Logo" className="logo-image" />
+            <span className="logo-text">SSBA</span>
+          </Link>
         </div>
 
+        {/* Navigation Menu */}
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
-            <li key={item.name} className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}>
+            <li key={item.name} className="nav-item">
               <Link 
                 to={item.href} 
-                className="nav-link"
+                className={`nav-link ${location.pathname === item.href ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -42,13 +48,30 @@ const Navigation = () => {
           ))}
         </ul>
 
+        {/* CTA Button */}
         <div className="nav-cta">
-          <Link to="/contact" className="cta-primary nav-cta-btn" onClick={() => setIsMenuOpen(false)}>Free Trial</Link>
+          <Link 
+            to="#trial-form" 
+            className="cta-primary nav-cta-btn" 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              if (location.pathname === '/') {
+                document.getElementById('trial-form')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.href = '/#trial-form';
+              }
+            }}
+          >
+            Free Trial
+          </Link>
         </div>
 
+        {/* Mobile Menu Button */}
         <button 
           className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
           <span></span>
           <span></span>
