@@ -15,10 +15,8 @@ const Navigation = () => {
     { name: 'Programs', href: '/programs' },
     { name: 'Batches', href: '/batches' },
     { name: 'Facilities', href: '/facilities' },
-    { name: 'Coaches', href: '/coaches' },
     { name: 'Achievements', href: '/achievements' },
     { name: 'Gallery', href: '/gallery' },
-    { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact' }
   ];
 

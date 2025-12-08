@@ -8,19 +8,28 @@
   background: #f8f9fa;
 }
 
+/* Add this at the top of your Gallery CSS file */
+
+.gallery-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding-top: 80px; /* Add padding to push content below navbar */
+}
+
 /* ========================================
    HERO SECTION
 ======================================== */
 
 .gallery-hero {
   position: relative;
-  height: 70vh;
-  min-height: 500px;
-  background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+  min-height: 50vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: 0; /* Remove any top margin */
+  padding: 80px 20px 60px; /* Add top padding for navbar space */
 }
 
 .hero-overlay {
@@ -618,6 +627,14 @@
   .cta-content h2 {
     font-size: 2rem;
   }
+
+  .gallery-page {
+    padding-top: 70px; /* Adjust for mobile navbar */
+  }
+
+  .gallery-hero {
+    padding: 60px 20px 40px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -632,5 +649,13 @@
   .hero-stats {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .gallery-page {
+    padding-top: 60px; /* Further adjust for smaller screens */
+  }
+
+  .gallery-hero {
+    padding: 50px 20px 30px;
   }
 }

@@ -668,136 +668,189 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Training Programs Section - REPLACES GALLERY */}
+      {/* Training Programs Section - COMPLETELY REDESIGNED */}
       <section 
         id="programs" 
         ref={setSectionRef('programs')}
         className={`programs-section ${isVisible['programs'] ? 'visible' : ''}`}
       >
         <div className="container programs-container">
-          <h2 className="section-title">Our Training Programs</h2>
-          <p className="section-subtitle">Choose the perfect program tailored to your goals</p>
+          <div className="programs-header">
+            <h2 className="section-title">Our Training Programs</h2>
+            <p className="section-subtitle">Choose the perfect program tailored to your badminton journey</p>
+          </div>
           
           <div className="programs-grid">
             {/* Beginner Program */}
-            <div className="program-card beginner">
-              <div className="program-icon">🎯</div>
-              <h3 className="program-title">Beginner</h3>
-              <p className="program-duration">3-6 Months Program</p>
+            <div className="program-card beginner-card">
+              <div className="program-header">
+                <div className="program-icon-large">🎯</div>
+                <span className="program-level">LEVEL 1</span>
+              </div>
+              <h3 className="program-title">Beginner Batch</h3>
+              <p className="program-tagline">Start Your Journey</p>
+              <div className="program-duration-box">
+                <span className="duration-icon">📅</span>
+                <span className="duration-text">3-6 Months Program</span>
+              </div>
               <ul className="program-features">
-                <li>✓ Basic techniques</li>
-                <li>✓ Grip & footwork</li>
-                <li>✓ 3 sessions/week</li>
-                <li>✓ Equipment guidance</li>
+                <li><span className="feature-check">✓</span> Basic stroke techniques</li>
+                <li><span className="feature-check">✓</span> Proper grip & footwork</li>
+                <li><span className="feature-check">✓</span> 3 sessions per week</li>
+                <li><span className="feature-check">✓</span> Equipment guidance</li>
+                <li><span className="feature-check">✓</span> Fitness fundamentals</li>
               </ul>
-              <button 
-                className="program-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Start Now
-              </button>
+              <div className="program-footer">
+                <button 
+                  className="program-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  <span>Start Now</span>
+                  <span className="btn-arrow">→</span>
+                </button>
+                <div className="program-badge">Perfect for Newcomers</div>
+              </div>
             </div>
 
             {/* Intermediate Program */}
-            <div className="program-card intermediate featured">
-              <div className="popular-badge">Popular</div>
-              <div className="program-icon">🏸</div>
-              <h3 className="program-title">Intermediate</h3>
-              <p className="program-duration">6-12 Months Program</p>
+            <div className="program-card intermediate-card featured-program">
+              <div className="popular-ribbon">
+                <span>⭐ MOST POPULAR</span>
+              </div>
+              <div className="program-header">
+                <div className="program-icon-large">🏸</div>
+                <span className="program-level">LEVEL 2</span>
+              </div>
+              <h3 className="program-title">Intermediate Batch</h3>
+              <p className="program-tagline">Elevate Your Skills</p>
+              <div className="program-duration-box">
+                <span className="duration-icon">📅</span>
+                <span className="duration-text">6-12 Months Program</span>
+              </div>
               <ul className="program-features">
-                <li>✓ Advanced techniques</li>
-                <li>✓ Match strategies</li>
-                <li>✓ 5 sessions/week</li>
-                <li>✓ Tournament prep</li>
+                <li><span className="feature-check">✓</span> Advanced techniques</li>
+                <li><span className="feature-check">✓</span> Match strategies & tactics</li>
+                <li><span className="feature-check">✓</span> 5 sessions per week</li>
+                <li><span className="feature-check">✓</span> Tournament preparation</li>
+                <li><span className="feature-check">✓</span> Video analysis sessions</li>
               </ul>
-              <button 
-                className="program-btn featured-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Join Now
-              </button>
+              <div className="program-footer">
+                <button 
+                  className="program-btn featured-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  <span>Join Now</span>
+                  <span className="btn-arrow">→</span>
+                </button>
+                <div className="program-badge">Best Value</div>
+              </div>
             </div>
 
             {/* Advanced Program */}
-            <div className="program-card advanced">
-              <div className="program-icon">🏆</div>
-              <h3 className="program-title">Advanced</h3>
-              <p className="program-duration">12+ Months Program</p>
+            <div className="program-card advanced-card">
+              <div className="program-header">
+                <div className="program-icon-large">🏆</div>
+                <span className="program-level">LEVEL 3</span>
+              </div>
+              <h3 className="program-title">Advanced Batch</h3>
+              <p className="program-tagline">Master the Game</p>
+              <div className="program-duration-box">
+                <span className="duration-icon">📅</span>
+                <span className="duration-text">12+ Months Program</span>
+              </div>
               <ul className="program-features">
-                <li>✓ Elite training</li>
-                <li>✓ Video analysis</li>
-                <li>✓ 6 sessions/week</li>
-                <li>✓ Competition support</li>
+                <li><span className="feature-check">✓</span> Elite training methods</li>
+                <li><span className="feature-check">✓</span> Professional video analysis</li>
+                <li><span className="feature-check">✓</span> 6 sessions per week</li>
+                <li><span className="feature-check">✓</span> Competition support</li>
+                <li><span className="feature-check">✓</span> Mental conditioning</li>
               </ul>
-              <button 
-                className="program-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Go Pro
-              </button>
-            </div>
-
-            {/* Kids Program */}
-            <div className="program-card kids">
-              <div className="program-icon">👶</div>
-              <h3 className="program-title">Kids Special</h3>
-              <p className="program-duration">Age 5-12 Years</p>
-              <ul className="program-features">
-                <li>✓ Fun learning</li>
-                <li>✓ Age-appropriate</li>
-                <li>✓ 3 sessions/week</li>
-                <li>✓ Character building</li>
-              </ul>
-              <button 
-                className="program-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Enroll Kid
-              </button>
-            </div>
-
-            {/* Personal Training */}
-            <div className="program-card personal">
-              <div className="program-icon">💪</div>
-              <h3 className="program-title">Personal Training</h3>
-              <p className="program-duration">Customized Schedule</p>
-              <ul className="program-features">
-                <li>✓ One-on-one coaching</li>
-                <li>✓ Flexible timing</li>
-                <li>✓ Custom programs</li>
-                <li>✓ Fast improvement</li>
-              </ul>
-              <button 
-                className="program-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Book Session
-              </button>
-            </div>
-
-            {/* Weekend Batch */}
-            <div className="program-card weekend">
-              <div className="program-icon">📅</div>
-              <h3 className="program-title">Weekend Batch</h3>
-              <p className="program-duration">Saturday & Sunday</p>
-              <ul className="program-features">
-                <li>✓ Weekend sessions</li>
-                <li>✓ Working professionals</li>
-                <li>✓ 2 sessions/week</li>
-                <li>✓ Flexible hours</li>
-              </ul>
-              <button 
-                className="program-btn"
-                onClick={() => scrollToSection('trial-form')}
-              >
-                Join Weekend
-              </button>
+              <div className="program-footer">
+                <button 
+                  className="program-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  <span>Go Pro</span>
+                  <span className="btn-arrow">→</span>
+                </button>
+                <div className="program-badge">For Champions</div>
+              </div>
             </div>
           </div>
 
-          {/* Contact for Pricing */}
-          <div className="pricing-cta">
-            <p>📞 <strong>Contact us for detailed pricing and packages</strong> - Call: +91 90827 01081</p>
+          {/* Special Batches */}
+          <div className="special-batches">
+            <h3 className="special-title">Special Training Batches</h3>
+            <div className="special-grid">
+              
+              {/* Kids Batch */}
+              <div className="special-card kids-special">
+                <div className="special-icon">👶</div>
+                <h4>Kids Special Batch</h4>
+                <p className="special-age">Age 5-12 Years</p>
+                <ul className="special-features">
+                  <li>Fun learning approach</li>
+                  <li>Age-appropriate training</li>
+                  <li>Character building focus</li>
+                  <li>3 sessions/week</li>
+                </ul>
+                <button 
+                  className="special-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  Enroll Kid
+                </button>
+              </div>
+
+              {/* Personal Training */}
+              <div className="special-card personal-special">
+                <div className="special-icon">💪</div>
+                <h4>Personal Training</h4>
+                <p className="special-age">1-on-1 Coaching</p>
+                <ul className="special-features">
+                  <li>Customized schedule</li>
+                  <li>Individual attention</li>
+                  <li>Flexible timing</li>
+                  <li>Fast improvement</li>
+                </ul>
+                <button 
+                  className="special-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  Book Session
+                </button>
+              </div>
+
+              {/* Weekend Batch */}
+              <div className="special-card weekend-special">
+                <div className="special-icon">📅</div>
+                <h4>Weekend Batch</h4>
+                <p className="special-age">Sat & Sun Only</p>
+                <ul className="special-features">
+                  <li>Working professionals</li>
+                  <li>Weekend convenience</li>
+                  <li>2 sessions/week</li>
+                  <li>Flexible hours</li>
+                </ul>
+                <button 
+                  className="special-btn"
+                  onClick={() => scrollToSection('trial-form')}
+                >
+                  Join Weekend
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Pricing CTA */}
+          <div className="pricing-cta-box">
+            <div className="pricing-icon">💰</div>
+            <h3>Get Detailed Pricing & Packages</h3>
+            <p>Contact us for customized packages tailored to your needs</p>
+            <a href="tel:+919082701081" className="pricing-call-btn">
+              📞 Call: +91 90827 01081
+            </a>
           </div>
         </div>
       </section>
@@ -1107,7 +1160,7 @@ const Home = () => {
                 <form className="enhanced-trial-form" onSubmit={handleTrialSubmit}>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="name" className="form-label">
+                      <label htmlFor="name" className="form-label" style={{ color: '#ffffff' }}>
                         Full Name <span className="required">*</span>
                       </label>
                       <input 
@@ -1125,7 +1178,7 @@ const Home = () => {
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="age" className="form-label">
+                      <label htmlFor="age" className="form-label" style={{ color: '#ffffff' }}>
                         Age <span className="required">*</span>
                       </label>
                       <input 
@@ -1147,7 +1200,7 @@ const Home = () => {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="phone" className="form-label">
+                      <label htmlFor="phone" className="form-label" style={{ color: '#ffffff' }}>
                         Phone Number <span className="required">*</span>
                       </label>
                       <input 
@@ -1165,7 +1218,7 @@ const Home = () => {
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="email" className="form-label">
+                      <label htmlFor="email" className="form-label" style={{ color: '#ffffff' }}>
                         Email Address <span className="required">*</span>
                       </label>
                       <input 
@@ -1185,7 +1238,7 @@ const Home = () => {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="level" className="form-label">
+                      <label htmlFor="level" className="form-label" style={{ color: '#ffffff' }}>
                         Playing Level <span className="required">*</span>
                       </label>
                       <select 
@@ -1193,7 +1246,8 @@ const Home = () => {
                         name="level" 
                         value={formData.level}
                         onChange={handleInputChange}
-                        className={`form-select ${formErrors.level ? 'error' : ''}`} style={{color: 'black'}}
+                        className={`form-select ${formErrors.level ? 'error' : ''}`} 
+                        style={{color: 'black'}}
                       >
                         <option value="">Select your level</option>
                         <option value="never-played">Never played before</option>
@@ -1208,7 +1262,7 @@ const Home = () => {
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="preferredTime" className="form-label">
+                      <label htmlFor="preferredTime" className="form-label" style={{ color: '#ffffff' }}>
                         Preferred Time <span className="required">*</span>
                       </label>
                       <select 
@@ -1216,7 +1270,8 @@ const Home = () => {
                         name="preferredTime" 
                         value={formData.preferredTime}
                         onChange={handleInputChange}
-                        className={`form-select ${formErrors.preferredTime ? 'error' : ''}`} style={{color: 'black'}}
+                        className={`form-select ${formErrors.preferredTime ? 'error' : ''}`} 
+                        style={{color: 'black'}}
                       >
                         <option value="">Select preferred time</option>
                         <option value="early-morning">Early Morning (6:00 AM - 8:00 AM)</option>
@@ -1233,7 +1288,7 @@ const Home = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="message" className="form-label">
+                    <label htmlFor="message" className="form-label" style={{ color: '#ffffff' }}>
                       Additional Message (Optional)
                     </label>
                     <textarea 
