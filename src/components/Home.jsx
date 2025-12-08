@@ -318,7 +318,7 @@ const Home = () => {
     }
   };
 
-  // Enhanced form submission
+  // Enhanced form submission with backend API
   const handleTrialSubmit = async (e) => {
     e.preventDefault();
     
@@ -331,28 +331,41 @@ const Home = () => {
     setSubmitStatus('');
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Success
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        age: '',
-        level: '',
-        preferredTime: '',
-        sport: 'badminton',
-        message: ''
+      // Send data to backend API
+      const response = await fetch("http://localhost:5000/api/trial-form", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify(formData)
       });
-      setFormErrors({});
-      
-      // Auto-hide success message after 5 seconds
-      setTimeout(() => setSubmitStatus(''), 5000);
+
+      if (response.ok) {
+        // Success
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          age: '',
+          level: '',
+          preferredTime: '',
+          sport: 'badminton',
+          message: ''
+        });
+        setFormErrors({});
+        
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => setSubmitStatus(''), 5000);
+      } else {
+        // Error from server
+        setSubmitStatus('error');
+        console.error('Server error:', response.statusText);
+      }
       
     } catch (error) {
       setSubmitStatus('error');
+      console.error('Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -689,10 +702,7 @@ const Home = () => {
               </div>
               <h3 className="program-title">Beginner Batch</h3>
               <p className="program-tagline">Start Your Journey</p>
-              <div className="program-duration-box">
-                <span className="duration-icon">📅</span>
-                <span className="duration-text">3-6 Months Program</span>
-              </div>
+             
               <ul className="program-features">
                 <li><span className="feature-check">✓</span> Basic stroke techniques</li>
                 <li><span className="feature-check">✓</span> Proper grip & footwork</li>
@@ -723,10 +733,7 @@ const Home = () => {
               </div>
               <h3 className="program-title">Intermediate Batch</h3>
               <p className="program-tagline">Elevate Your Skills</p>
-              <div className="program-duration-box">
-                <span className="duration-icon">📅</span>
-                <span className="duration-text">6-12 Months Program</span>
-              </div>
+             
               <ul className="program-features">
                 <li><span className="feature-check">✓</span> Advanced techniques</li>
                 <li><span className="feature-check">✓</span> Match strategies & tactics</li>
@@ -754,10 +761,7 @@ const Home = () => {
               </div>
               <h3 className="program-title">Advanced Batch</h3>
               <p className="program-tagline">Master the Game</p>
-              <div className="program-duration-box">
-                <span className="duration-icon">📅</span>
-                <span className="duration-text">12+ Months Program</span>
-              </div>
+             
               <ul className="program-features">
                 <li><span className="feature-check">✓</span> Elite training methods</li>
                 <li><span className="feature-check">✓</span> Professional video analysis</li>
@@ -1275,10 +1279,10 @@ const Home = () => {
                       >
                         <option value="">Select preferred time</option>
                         <option value="early-morning">Early Morning (6:00 AM - 8:00 AM)</option>
-                        <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
-                        <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
-                        <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
-                        <option value="night">Night (8:00 PM - 10:00 PM)</option>
+                        <option value="morning">Morning (8:00 AM - 10:00 AM)</option>
+                        <option value="afternoon">Afternoon (12:00 PM - 2:00 PM)</option>
+                        <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
+  
                         <option value="weekend">Weekend (Flexible)</option>
                       </select>
                       {formErrors.preferredTime && (
