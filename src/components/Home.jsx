@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './Home.css';
 import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 // Import your images correctly - using exact filenames from your assets folder
 import coach from '../assets/coach.png';
@@ -32,6 +33,7 @@ const galleryImages = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate(); // Add this hook
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animatedStats, setAnimatedStats] = useState(false);
   const [isVisible, setIsVisible] = useState({});
@@ -462,15 +464,6 @@ const Home = () => {
                   <div className="info-text">
                     <strong>Expert Coaching</strong>
                     <span>Learn from certified professionals</span>
-                  </div>
-                </div>
-              )}
-              {slide.overlay === 'action' && (
-                <div className="info-card">
-                  <div className="info-icon">⚡</div>
-                  <div className="info-text">
-                    <strong>Live Action</strong>
-                    <span>Real match simulations</span>
                   </div>
                 </div>
               )}
@@ -1385,7 +1378,7 @@ const Home = () => {
                   <button 
                     type="button"
                     className="footer-link"
-                    onClick={() => scrollToSection('gallery')}
+                    onClick={() => navigate('/gallery')}
                   >
                     Gallery
                   </button>

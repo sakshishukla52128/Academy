@@ -21,10 +21,10 @@ const Contact = () => {
       icon: '📍',
       title: 'Our Location',
       details: [
-        'Shuttle Smash Badminton Academy',
-        '123 Sports Complex, Badminton Lane',
-        'City Center, Mumbai - 400001',
-        'Near Metro Station, Gate No. 3'
+      'Central Railway, Behind Gymkhana',
+      'Opp. Poddar College',
+      'Matunga Railway Colony',
+      'Matunga (E), Mumbai – 400019'
       ],
       color: 'blue'
     },
@@ -33,9 +33,7 @@ const Contact = () => {
       icon: '📞',
       title: 'Call Us',
       details: [
-        '+91 98765 43210 (Main)',
-        '+91 87654 32109 (Admission)',
-        '+91 76543 21098 (Emergency)',
+        '+91 90827 01081 (Main)',
         'Available 6:00 AM - 10:00 PM'
       ],
       color: 'green'
@@ -45,36 +43,15 @@ const Contact = () => {
       icon: '✉️',
       title: 'Email Us',
       details: [
-        'info@shuttlesmash.com',
-        'admission@shuttlesmash.com',
-        'coach@shuttlesmash.com',
-        'support@shuttlesmash.com'
+        'shuttlesmash02@gmail.com',
+        'shuklasimran2696@gmail.com'
       ],
       color: 'orange'
     },
-    {
-      id: 4,
-      icon: '🕐',
-      title: 'Academy Hours',
-      details: [
-        'Monday - Friday: 6:00 AM - 10:00 PM',
-        'Saturday: 6:00 AM - 8:00 PM',
-        'Sunday: 7:00 AM - 6:00 PM',
-        'Public Holidays: 8:00 AM - 4:00 PM'
-      ],
-      color: 'purple'
-    }
+   
   ];
 
-  // Social media links
-  const socialLinks = [
-    { id: 1, platform: 'Facebook', icon: '📘', url: '#', color: '#1877F2' },
-    { id: 2, platform: 'Instagram', icon: '📷', url: '#', color: '#E4405F' },
-    { id: 3, platform: 'YouTube', icon: '📺', url: '#', color: '#FF0000' },
-    { id: 4, platform: 'WhatsApp', icon: '💬', url: '#', color: '#25D366' },
-    { id: 5, platform: 'Twitter', icon: '🐦', url: '#', color: '#1DA1F2' },
-    { id: 6, platform: 'LinkedIn', icon: '💼', url: '#', color: '#0A66C2' }
-  ];
+
 
   // FAQ data
   const faqs = [
@@ -152,7 +129,7 @@ const Contact = () => {
 
   // Open WhatsApp
   const openWhatsApp = () => {
-    const phone = "+919876543210";
+    const phone = "+919082701081";
     const message = "Hello, I'm interested in Shuttle Smash Badminton Academy!";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -295,37 +272,19 @@ const Contact = () => {
             <div className="quick-contact">
               <h4>Quick Contact</h4>
               <div className="quick-actions">
-                <button className="quick-btn call-btn" onClick={() => window.open('tel:+919876543210')}>
-                  📞 Call Now
+                <button className="quick-btn call-btn" onClick={() => window.open('tel:+91 90827 01081')}>
+                  📞 Call Now:+91 90827 01081
                 </button>
                 <button className="quick-btn whatsapp-btn" onClick={openWhatsApp}>
                   💬 WhatsApp
                 </button>
-                <button className="quick-btn email-btn" onClick={() => window.open('mailto:info@shuttlesmash.com')}>
+                <button className="quick-btn email-btn" onClick={() => window.open('mailto:shuttlesmash02@gmail.com')}>
                   ✉️ Email
                 </button>
               </div>
             </div>
 
-            {/* Social Media */}
-            <div className="social-media">
-              <h4>Follow Us</h4>
-              <div className="social-links">
-                {socialLinks.map((social) => (
-                  <a 
-                    key={social.id} 
-                    href={social.url} 
-                    className="social-link"
-                    style={{ '--social-color': social.color }}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="social-icon">{social.icon}</span>
-                    <span className="social-name">{social.platform}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+          
 
             {/* FAQs */}
             <div className="faq-section">
